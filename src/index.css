@@ -517,6 +517,20 @@ label {
   margin-left: 5px;
 }
 
+@media (max-width: 768px) {
+  .task-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: 0;
+    align-items: stretch;
+  }
+  
+  .task-actions .btn {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
 /* BOTONES - Estilos movidos a minimalist-design.css */
 .btn-icon {
   padding: 0;
@@ -1940,12 +1954,16 @@ label {
 @media (max-width: 768px) {
   .stats-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 0 0.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .stats-container {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 0 0.5rem;
   }
 }
 
@@ -2054,17 +2072,21 @@ label {
   left: 1rem;
   color: #999;
   pointer-events: none;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
 }
 
 .search-input {
   width: 100%;
-  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  padding: 0.75rem 1rem 0.75rem 3rem;
   border: var(--border-width-medium) solid !important;
   border-image: var(--gradient-primary) 1 !important;
   border-radius: 24px !important;
   font-size: 1rem;
   transition: all 0.2s ease;
   background: transparent !important;
+  position: relative;
 }
 
 .search-input:focus {
@@ -2459,6 +2481,11 @@ label {
   .filter-btn {
     flex: 1;
     min-width: 0;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .confirm-modal {
