@@ -2,12 +2,12 @@
 export function Tutorial() {
   return (
     <div className="tutorial-container">
-      <h1 className="tutorial-title">¿Cómo usar TodoApp?</h1>
+      <h1 className="tutorial-title">¿Cómo usar TodoTalker?</h1>
 
       <section className="tutorial-section">
         <h2>🎯 Primeros pasos</h2>
         <p>
-          TodoApp es una aplicación moderna de gestión de tareas que te permite crear,
+          TodoTalker es una aplicación moderna de gestión de tareas que te permite crear,
           gestionar y completar tareas de manera eficiente. Puedes agregar tareas tanto
           por voz como por texto, y llevar un control completo de tu productividad.
         </p>
@@ -31,7 +31,7 @@ export function Tutorial() {
 
       <section className="tutorial-section">
         <h2>➕ Agregar tareas</h2>
-        <p>TodoApp te ofrece dos formas de agregar tareas:</p>
+        <p>TodoTalker te ofrece dos formas de agregar tareas:</p>
         
         <div className="tutorial-actions">
           <div className="action-item">
@@ -169,7 +169,7 @@ export function Tutorial() {
       <section className="tutorial-section cta-section">
         <h2>🚀 ¡Comienza ahora!</h2>
         <p>
-          Ya estás listo para usar TodoApp. Dirígete a <strong>Mis tareas</strong> y
+          Ya estás listo para usar TodoTalker. Dirígete a <strong>Mis tareas</strong> y
           comienza a crear tu primera tarea. ¡Puedes hacerlo por voz o por texto, tú decides!
         </p>
       </section>

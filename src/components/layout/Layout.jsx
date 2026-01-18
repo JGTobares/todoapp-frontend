@@ -21,7 +21,7 @@ export function Layout({ children }) {
         <div className="header-left">
           <Link to="/" className="logo">
             <Mic size={24} />
-            <span>TodoApp</span>
+            <span>TodoTalker</span>
           </Link>
           
           <nav className="nav-desktop">
@@ -72,7 +72,7 @@ export function Layout({ children }) {
 
       <footer className="footer">
         <div className="footer-content">
-          <p>© 2026 TodoApp</p>
+          <p>© 2026 TodoTalker</p>
           <div className="footer-links">
             <Link to="/tutorial">Ayuda</Link>
             <span>•</span>

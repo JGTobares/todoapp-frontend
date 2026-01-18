@@ -1949,13 +1949,25 @@ label {
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin-bottom: 2rem;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
   .stats-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
-    padding: 0 0.5rem;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .stat-card {
+    padding: 1rem;
+    min-width: 0;
+    overflow: hidden;
   }
 }
 
@@ -1963,7 +1975,45 @@ label {
   .stats-container {
     grid-template-columns: 1fr;
     gap: 0.75rem;
-    padding: 0 0.5rem;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .stat-card {
+    padding: 1rem;
+    min-width: 0;
+    overflow: hidden;
+  }
+}
+
+/* Landscape en móvil */
+@media (max-width: 768px) and (orientation: landscape) {
+  .stats-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .stat-card {
+    padding: 0.75rem 0.5rem;
+    min-width: 0;
+    overflow: hidden;
+  }
+  
+  .stat-value {
+    font-size: 1.2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
+  .stat-card svg {
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -1979,6 +2029,9 @@ label {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-align: center;
   flex-direction: row;
+  box-sizing: border-box;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .stat-card.highlight {
@@ -2070,16 +2123,19 @@ label {
 .search-box svg {
   position: absolute;
   left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
   color: #999;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
   width: 18px;
   height: 18px;
+  flex-shrink: 0;
 }
 
 .search-input {
   width: 100%;
-  padding: 0.75rem 1rem 0.75rem 3rem;
+  padding: 0.75rem 1rem 0.75rem 3.5rem !important;
   border: var(--border-width-medium) solid !important;
   border-image: var(--gradient-primary) 1 !important;
   border-radius: 24px !important;
@@ -2087,6 +2143,7 @@ label {
   transition: all 0.2s ease;
   background: transparent !important;
   position: relative;
+  box-sizing: border-box;
 }
 
 .search-input:focus {
@@ -2391,7 +2448,7 @@ label {
 
 .confirm-modal-body {
   margin-bottom: 1.5rem;
-}
+  }
 
 .confirm-modal-body p {
   color: #666;
@@ -2441,11 +2498,30 @@ label {
   }
 
   .header-left {
-    gap: 1rem;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .logo {
+    gap: 0.5rem;
+    font-size: 1rem;
+    min-width: 0;
+  }
+
+  .logo svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
   }
 
   .logo span {
-    display: none;
+    display: inline-block;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
   }
 
   .nav-desktop {
@@ -2524,7 +2600,7 @@ label {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5rem;
-}
+  }
 
 .password-strength-label {
   font-size: 0.85rem;
@@ -2637,7 +2713,7 @@ label {
 
 .breadcrumb-separator {
   color: #999;
-}
+  }
 
 .breadcrumb-current {
   color: var(--color-neutral-dark);

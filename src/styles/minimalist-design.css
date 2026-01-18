@@ -95,7 +95,6 @@ input[type="tel"]:not(.no-gradient-border),
 input[type="url"]:not(.no-gradient-border),
 input[type="search"]:not(.no-gradient-border),
 input.form-input:not(.no-gradient-border),
-input.search-input:not(.no-gradient-border),
 textarea:not(.no-gradient-border),
 select:not(.no-gradient-border) {
   background: transparent !important;
@@ -110,6 +109,11 @@ select:not(.no-gradient-border) {
   width: 100%;
   text-align: left;
   position: relative;
+}
+
+/* Search input tiene padding especial para el icono */
+input.search-input:not(.no-gradient-border) {
+  padding-left: 3.5rem !important;
 }
 
 /* Alinear placeholders a la izquierda */
