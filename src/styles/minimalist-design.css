@@ -1,0 +1,327 @@
+/* ============================================
+   DISEÑO MINIMALISTA - SOLO BORDES CON GRADIENTES
+   ============================================ */
+
+/* Botones - Solo Border con Gradiente, Sin Background */
+.btn,
+button.btn,
+a.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  background: transparent !important;
+  border: var(--border-width-medium) solid !important;
+  border-radius: 24px !important;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  min-height: 42px;
+  min-width: 42px;
+  text-decoration: none;
+  /* Color por defecto visible si no tiene clase específica */
+  border-image: var(--gradient-primary) 1;
+  color: #667eea;
+}
+
+/* Bordes con gradientes usando border-image */
+.btn-primary {
+  border-image: var(--gradient-primary) 1 !important;
+  color: #667eea !important;
+}
+
+.btn-primary:hover {
+  border-image: linear-gradient(135deg, #764ba2 0%, #667eea 100%) 1;
+  color: #764ba2;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  border-image: var(--gradient-secondary) 1 !important;
+  color: #f5576c !important;
+  margin: 0;
+}
+
+.btn-secondary:hover {
+  border-image: linear-gradient(135deg, #f5576c 0%, #f093fb 100%) 1;
+  color: #f093fb;
+  transform: translateY(-1px);
+}
+
+.btn-accent {
+  border-image: var(--gradient-accent) 1 !important;
+  color: #4facfe !important;
+}
+
+.btn-accent:hover {
+  border-image: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%) 1;
+  color: #00f2fe;
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  border-image: var(--gradient-danger) 1 !important;
+  color: #ee0979 !important;
+}
+
+.btn-danger:hover {
+  border-image: linear-gradient(135deg, #ee0979 0%, #fa709a 100%) 1;
+  color: #fa709a;
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-image: linear-gradient(135deg, #ccc 0%, #999 100%) 1;
+  color: #999;
+}
+
+.btn:disabled:hover {
+  transform: none;
+}
+
+/* Textfields - Solo Border con Gradiente, Sin Background, Con Indicador */
+/* Solo aplicar a inputs, textareas y selects, NO a divs u otros elementos */
+input[type="text"]:not(.no-gradient-border),
+input[type="email"]:not(.no-gradient-border),
+input[type="password"]:not(.no-gradient-border),
+input[type="number"]:not(.no-gradient-border),
+input[type="tel"]:not(.no-gradient-border),
+input[type="url"]:not(.no-gradient-border),
+input[type="search"]:not(.no-gradient-border),
+input.form-input:not(.no-gradient-border),
+input.search-input:not(.no-gradient-border),
+textarea:not(.no-gradient-border),
+select:not(.no-gradient-border) {
+  background: transparent !important;
+  border: var(--border-width-medium) solid !important;
+  border-image: var(--gradient-primary) 1 !important;
+  border-radius: 24px !important;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  transition: all var(--transition);
+  width: 100%;
+  text-align: left;
+  position: relative;
+}
+
+/* Alinear placeholders a la izquierda */
+input[type="text"]:not(.no-gradient-border)::placeholder,
+input[type="email"]:not(.no-gradient-border)::placeholder,
+input[type="password"]:not(.no-gradient-border)::placeholder,
+input[type="number"]:not(.no-gradient-border)::placeholder,
+input[type="tel"]:not(.no-gradient-border)::placeholder,
+input[type="url"]:not(.no-gradient-border)::placeholder,
+input[type="search"]:not(.no-gradient-border)::placeholder,
+input.form-input:not(.no-gradient-border)::placeholder,
+input.search-input:not(.no-gradient-border)::placeholder,
+textarea:not(.no-gradient-border)::placeholder {
+  text-align: left;
+  direction: ltr;
+}
+
+/* Wrapper para inputs con indicador */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper::after {
+  content: '📝';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0.6;
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.input-wrapper input {
+  padding-right: 2.5rem;
+}
+
+textarea {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.textarea-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.textarea-wrapper::after {
+  content: '📝';
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  pointer-events: none;
+  opacity: 0.6;
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.textarea-wrapper textarea {
+  padding-right: 2.5rem;
+}
+
+select {
+  padding-right: 2.5rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23667eea' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px;
+}
+
+/* Focus states */
+input:focus:not(.no-gradient-border),
+input.form-input:focus:not(.no-gradient-border),
+textarea:focus:not(.no-gradient-border),
+select:focus:not(.no-gradient-border) {
+  outline: none;
+  border-image: var(--gradient-accent) 1 !important;
+  border-radius: 24px !important;
+  box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+  color: #4facfe;
+}
+
+/* Validación visual */
+input.valid:not(.no-gradient-border),
+input.form-input.valid:not(.no-gradient-border),
+textarea.valid:not(.no-gradient-border) {
+  border-image: linear-gradient(135deg, #30cfd0 0%, #330867 100%) 1 !important;
+  border-radius: 24px !important;
+  color: #30cfd0;
+}
+
+input.invalid:not(.no-gradient-border),
+input.form-input.invalid:not(.no-gradient-border),
+textarea.invalid:not(.no-gradient-border) {
+  border-image: var(--gradient-danger) 1 !important;
+  border-radius: 24px !important;
+  color: #ee0979;
+}
+
+input:disabled:not(.no-gradient-border),
+input.form-input:disabled:not(.no-gradient-border),
+textarea:disabled:not(.no-gradient-border),
+select:disabled:not(.no-gradient-border) {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-image: linear-gradient(135deg, #ccc 0%, #999 100%) 1 !important;
+  border-radius: 24px !important;
+  color: #999;
+}
+
+/* Placeholder centrado */
+input::placeholder,
+textarea::placeholder {
+  text-align: center;
+  color: #999;
+  opacity: 0.7;
+}
+
+textarea::placeholder {
+  text-align: left;
+}
+
+/* Labels */
+label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  display: block;
+  text-align: left;
+}
+
+/* Form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* Help text */
+.form-help-text {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.form-help-text.valid {
+  color: #30cfd0;
+}
+
+.form-help-text.invalid {
+  color: #ee0979;
+}
+
+/* ============================================
+   EXCLUSIONES - Elementos que NO deben tener bordes con gradientes
+   ============================================ */
+
+/* Mensajes de error y éxito - NO aplicar bordes con gradientes */
+.error-message,
+.success-message,
+.profile-error-message,
+.profile-success-message {
+  border-image: none !important;
+  border: 1px solid !important;
+}
+
+/* Contenedores y boxes - NO aplicar bordes con gradientes */
+.auth-container,
+.stat-card,
+.action-item,
+.faq-item,
+.mobile-menu-dropdown,
+.toast,
+.confirm-modal,
+.token-refresh-modal,
+.profile-form-card {
+  border-image: none !important;
+}
+
+/* Asegurar que los inputs dentro de wrappers mantengan sus bordes con gradientes */
+.input-wrapper input,
+.textarea-wrapper textarea {
+  border-image: var(--gradient-primary) 1 !important;
+}
+
+/* Regla general: Solo botones e inputs deben tener border-image */
+/* Todos los demás elementos (divs, spans, etc.) NO deben tener border-image */
+*:not(.btn):not(button):not(input):not(textarea):not(select) {
+  border-image: none !important;
+}
+
+/* Excepciones específicas para elementos que pueden tener bordes normales */
+.error-message,
+.success-message,
+.profile-error-message,
+.profile-success-message,
+.auth-container,
+.stat-card,
+.action-item,
+.faq-item,
+.mobile-menu-dropdown,
+.toast,
+.confirm-modal,
+.token-refresh-modal,
+.profile-form-card {
+  border-image: none !important;
+}
